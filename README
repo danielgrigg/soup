@@ -1,0 +1,25 @@
+Soup provides a complete example of using my rcmake with a real project.
+rcmake generates a CMake-based build system for your projects.  See
+https://github.com/danielgrigg/rcmake for more information.
+
+Soup consists of a library, soup and test application, souptaste within the 
+src and test hierarchies respectively. rcmake handles this use-case 
+effortlessly, but can just as easily incorporate packages, platform-dependent 
+layouts etc.  However, for accessibility soup doesn't have any external 
+dependencies.
+
+Usage
+=====
+
+Simply enter,
+ruby rcmake.rb
+
+This will generate build schemes under 'build/<your_platform>_debug' and 
+'build/<your_platform>_release using your platform's default CMake Generator.
+Soup can be installed from these folders.
+
+rcmake forwards CMake options, so a specific generator can easily be used, ie:
+
+ruby rcmake.rb -G Xcode
+
+Which will generate Xcode projects in the scheme folders.
